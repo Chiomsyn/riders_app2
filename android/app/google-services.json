@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "438255299877",
+    "project_id": "fir-uber-clone",
+    "storage_bucket": "fir-uber-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438255299877:android:44e43641e5aaed86c63ecc",
+        "android_client_info": {
+          "package_name": "com.demo.users_uberclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxsfx1WlbcXv6XywQ_cyBjAL0S81USSgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
