@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:users_uberclone/presentation/pages/tab_pages/earning_tab.dart';
 import 'package:users_uberclone/presentation/pages/tab_pages/home_tab.dart';
 import 'package:users_uberclone/presentation/pages/tab_pages/profile_tab.dart';
 import 'package:users_uberclone/presentation/pages/tab_pages/ratings_tab.dart';
 
+import '../../data_handler/app_data.dart';
 
 class MainScreen extends StatefulWidget {
   static const String idScreen = "main";
@@ -64,5 +66,4 @@ class _MainScreenState extends State<MainScreen>
       ),
     );
   }
-
 }

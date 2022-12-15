@@ -31,7 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
     }
     placePredictionsList =
         await ApiMethods.searchAddress(placeName, _sessionToken!);
-    print(placePredictionsList);
+    // print(placePredictionsList);
 
     setState(() {});
   }
@@ -40,13 +40,13 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     final address = Provider.of<AppData>(context);
 
-    String? placeAddress = address.pickUpLocation!.placeName ?? '';
+    String? placeAddress = address.pickUpLocation!.placeName;
 
-    pickUpTextEditingController.text = placeAddress ?? '';
+    pickUpTextEditingController.text = placeAddress;
 
     return Scaffold(
         body: SingleChildScrollView(
-          child: Column(
+            child: Column(
       children: [
         Container(
           height: 215.0,
@@ -158,7 +158,8 @@ class _SearchScreenState extends State<SearchScreen> {
         ),
         (placePredictionsList.isNotEmpty)
             ? Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                 child: ListView.separated(
                   padding: const EdgeInsets.all(0.0),
                   itemBuilder: (context, index) {

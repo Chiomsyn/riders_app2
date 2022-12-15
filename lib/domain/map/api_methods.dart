@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:users_uberclone/domain/firebase/firebase_methods.dart';
 import '../../core/global/maps/base_urls.dart';
 import '../../core/global/maps/map_key.dart';
 import '../../core/model/address.dart';
@@ -71,7 +73,6 @@ class ApiMethods {
             res['routes'][0]['legs'][0]['duration']['text'];
         directionDetails.encodedPoints =
             res["routes"][0]["overview_polyline"]["points"];
-
       }
     } catch (e) {
       print(e);
@@ -142,25 +143,45 @@ class ApiMethods {
     }
   }
 
-  static int calculateFares(DirectionDetails directionDetails, {String? type}){
+  static Future<void> calculateFares(
+      DirectionDetails directionDetails, context) async {
     // in terms usd
     // double timeTraveledFare = (directionDetails.durationValue! / 60) * 0.20;
     // double distanceTraveledFare = (directionDetails.distanceValue! / 1000) * 0.20;
 
-    double timeTraveledFare = (directionDetails.durationValue! / 60);
+    Map<String, dynamic> data = await FirebaseMethods.getRideAddedPrice();
+    double nairaCharge = 0;
+    double premiumCharge = 0;
+    double surgePrice = 0;
+    int promoPercentage = 0;
 
+    if (data.isNotEmpty) {
+      if (data["priceDistanceAndTime"] != "") {
+        nairaCharge = double.parse(data["priceDistanceAndTime"]);
+      }
 
-    double distanceTraveledFare = (directionDetails.distanceValue! / 1000);
+      if (data["addedPremiumPrice"] != "") {
+        premiumCharge = double.parse(data["addedPremiumPrice"]);
+      }
+
+      if (data["surgePrice"] != "") {
+        surgePrice = double.parse(data["surgePrice"]);
+      }
+    }
+
+    double timeTraveledFare = ((directionDetails.durationValue ?? 0) / 60);
+
+    double distanceTraveledFare =
+        ((directionDetails.distanceValue ?? 0) / 1000);
     double totalFaredAmount = timeTraveledFare + distanceTraveledFare;
 
     // 1$ = 710 Naira
-    double totalLocalAmount = totalFaredAmount * 10;
+    double totalLocalAmount = (totalFaredAmount * nairaCharge) + surgePrice;
 
-     if(type == "premium"){
-       return (totalLocalAmount + 100).truncate();
-     }else{
-       return totalLocalAmount.truncate();
-     }
-   }
+    Provider.of<AppData>(context, listen: false).premiumTripPrice =
+        (totalLocalAmount + premiumCharge).truncate();
 
+    Provider.of<AppData>(context, listen: false).poorTripPrice =
+        totalLocalAmount.truncate();
+  }
 }

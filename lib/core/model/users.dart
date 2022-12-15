@@ -5,11 +5,15 @@ class UsersModel {
   String? email;
   String? name;
   String? phone;
+  String? token;
+  String? status;
   UsersModel({
     this.id,
     this.email,
     this.name,
     this.phone,
+    this.token,
+    this.status,
   });
 
   Map<String, dynamic> toMap() {
@@ -18,6 +22,8 @@ class UsersModel {
       'name': name,
       'email': email,
       'phone': phone,
+      'token': token,
+      'status': status,
     };
   }
 
@@ -27,6 +33,8 @@ class UsersModel {
       name: map['name'] ?? '',
       email: map['email'] ?? '',
       phone: map['phone'] ?? '',
+      token: map['token'] ?? '',
+      status: map['status'] ?? '',
     );
   }
 

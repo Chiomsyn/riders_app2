@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/global/auth/auth.dart';
+import '../../../data_handler/app_data.dart';
 import '../auth/login_screen.dart';
 
 class ProfileTabPage extends StatefulWidget {
@@ -13,6 +15,7 @@ class ProfileTabPage extends StatefulWidget {
 class _ProfileTabPageState extends State<ProfileTabPage> {
   @override
   Widget build(BuildContext context) {
+    final address = Provider.of<AppData>(context);
     return Center(
       child: ElevatedButton(
           child: const Text("Sign Out"),

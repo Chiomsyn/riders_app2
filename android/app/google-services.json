@@ -7,9 +7,53 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:438255299877:android:44e43641e5aaed86c63ecc",
+        "mobilesdk_app_id": "1:438255299877:android:1658b053e9d8f1b3c63ecc",
         "android_client_info": {
-          "package_name": "com.demo.users_uberclone"
+          "package_name": "com.appnovia.drops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438255299877-kaihtgbjop5tmg3rfat5um53plp741kn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appnovia.drops",
+            "certificate_hash": "b20ea7517fd13dba06cbc027393239a2317bfe2f"
+          }
+        },
+        {
+          "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxsfx1WlbcXv6XywQ_cyBjAL0S81USSgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "438255299877-djp9km9h7k56courfep9f2vifp35af1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appnovia.drops"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438255299877:android:4720ff326dededadc63ecc",
+        "android_client_info": {
+          "package_name": "com.appnovia.drops.drivers"
         }
       },
       "oauth_client": [
@@ -29,6 +73,49 @@
             {
               "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "438255299877-djp9km9h7k56courfep9f2vifp35af1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appnovia.drops"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438255299877:android:878686df3eb986f8c63ecc",
+        "android_client_info": {
+          "package_name": "com.appnovia.drops.riders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxsfx1WlbcXv6XywQ_cyBjAL0S81USSgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438255299877-ag62s8t74io22ea17omrebvehai2rij2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "438255299877-djp9km9h7k56courfep9f2vifp35af1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appnovia.drops"
+              }
             }
           ]
         }
